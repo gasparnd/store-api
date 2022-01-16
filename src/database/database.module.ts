@@ -25,7 +25,6 @@ const API_KEY_PROD = 'PROD1212121SA';
           password,
         } = configService.mongo;
 
-        const uri2 = `mongodb://root:root@localhost:27017/?authSource=admin&readPreference=primary`;
         const uri = `${connection}://${user}:${password}@${host}:${port}/?authSource=admin&readPreference=primary`;
 
         const client = new MongoClient(uri);
