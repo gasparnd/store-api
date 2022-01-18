@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/core@11.2.0":
-  "integrity" "sha512-qqYEH8m/bwpngoLDMFuth8ykvoHxQ3aHHnAWfRXz9NXydwSfathG0VSYCctB126sK39JKIn+xq16CQAExxNu+Q=="
-  "resolved" "https://registry.npmjs.org/@angular-devkit/core/-/core-11.2.0.tgz"
-  "version" "11.2.0"
+"@angular-devkit/core@11.2.4":
+  "integrity" "sha512-98mGDV4XtKWiQ/2D6yzvOHrnJovXchaAN9AjscAHd2an8Fkiq72d9m2wREpk+2J40NWTDB6J5iesTh3qbi8+CA=="
+  "resolved" "https://registry.npmjs.org/@angular-devkit/core/-/core-11.2.4.tgz"
+  "version" "11.2.4"
   dependencies:
     "ajv" "6.12.6"
     "fast-json-stable-stringify" "2.1.0"
@@ -49,12 +49,12 @@
     "minimist" "1.2.5"
     "symbol-observable" "4.0.0"
 
-"@angular-devkit/schematics@11.2.0":
-  "integrity" "sha512-sMDacACJbA4pykiqgJf/RdW0damcf4mDqErGgEqs/bGG+SBUb8+wgt4cQnUwwVX5V2nMdvv7f0A84rgR6I3G2w=="
-  "resolved" "https://registry.npmjs.org/@angular-devkit/schematics/-/schematics-11.2.0.tgz"
-  "version" "11.2.0"
+"@angular-devkit/schematics@11.2.4":
+  "integrity" "sha512-M9Ike1TYawOIHzenlZS1ufQbsS+Z11/doj5w/UrU0q2OEKc6U375t5qVGgKo3PLHHS8osb9aW9xYwBfVlKrryQ=="
+  "resolved" "https://registry.npmjs.org/@angular-devkit/schematics/-/schematics-11.2.4.tgz"
+  "version" "11.2.4"
   dependencies:
-    "@angular-devkit/core" "11.2.0"
+    "@angular-devkit/core" "11.2.4"
     "ora" "5.3.0"
     "rxjs" "6.6.3"
 
@@ -685,14 +685,15 @@
     "multer" "1.4.4"
     "tslib" "2.3.1"
 
-"@nestjs/schematics@^7.2.7":
-  "integrity" "sha512-cxs76Ia1SHTp18jXTusZtUucNjAmorlTzSaeKUH+71fri2pA0JOS4RJlfta5znDuA26gboolanPE6U0ZzaLM3A=="
-  "resolved" "https://registry.npmjs.org/@nestjs/schematics/-/schematics-7.2.8.tgz"
-  "version" "7.2.8"
+"@nestjs/schematics@^7.3.1":
+  "integrity" "sha512-eyBjJstAjecpdzRuBLiqnwomwXIAEV3+kPkpaphOieRUM6nBhjnXCCl3Qf8Dul2QUQK4NOVPd8FFxWtGP5XNlg=="
+  "resolved" "https://registry.npmjs.org/@nestjs/schematics/-/schematics-7.3.1.tgz"
+  "version" "7.3.1"
   dependencies:
-    "@angular-devkit/core" "11.2.0"
-    "@angular-devkit/schematics" "11.2.0"
+    "@angular-devkit/core" "11.2.4"
+    "@angular-devkit/schematics" "11.2.4"
     "fs-extra" "9.1.0"
+    "jsonc-parser" "3.0.0"
     "pluralize" "8.0.0"
 
 "@nestjs/schematics@^8.0.3":
