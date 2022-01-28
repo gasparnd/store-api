@@ -9,12 +9,14 @@ import { CategoriesService } from './services/categories.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Product, ProductShcema } from './entities/product.entity';
 import { Brand, BrandSchema } from './entities/brand.entity';
+import { Category, CategorySchema } from './entities/category.entity';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
       { name: Product.name, schema: ProductShcema },
       { name: Brand.name, schema: BrandSchema },
+      { name: Category.name, schema: CategorySchema },
     ]),
   ],
   controllers: [ProductsController, CategoriesController, BrandsController],
