@@ -23,13 +23,21 @@ export class ProductsService {
       if (minPrice && maxPrice) {
         filter.price = { $gte: minPrice, $lte: maxPrice };
       }
-      return this.productModel.find(filter).skip(offset).limit(limit).exec();
+      return this.productModel
+        .find(filter)
+        .populate('brand')
+        .skip(offset)
+        .limit(limit)
+        .exec();
     }
-    return this.productModel.find().exec();
+    return this.productModel.find().populate('brand').exec();
   }
 
   async findOne(id: string) {
-    const product = await this.productModel.findById(id).exec();
+    const product = await this.productModel
+      .findById(id)
+      .populate('brand')
+      .exec();
     if (!product) {
       throw new NotFoundException(`Product #${id} not found`);
     }
