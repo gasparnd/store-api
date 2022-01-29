@@ -13,7 +13,7 @@ import { CreateOrderDto, UpdateOrderDto } from '../dtos/order.dto';
 import { OrdersService } from '../services/orders.service';
 
 @Controller('users')
-export class OrderController {
+export class OrdersController {
   constructor(private ordersService: OrdersService) {}
 
   @Get()
