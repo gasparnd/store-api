@@ -1,10 +1,11 @@
 import { User } from './user.entity';
 import { Product } from './../../products/entities/product.entity';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
 @Schema()
-export class Order {
-  @Prop({ required: true })
+export class Order extends Document {
+  @Prop({ required: true, type: Date })
   date: Date;
 
   @Prop({ required: true })
