@@ -12,7 +12,7 @@ import { MongoIdPipe } from 'src/common/mongo-id.pipe';
 import { CreateOrderDto, UpdateOrderDto } from '../dtos/order.dto';
 import { OrdersService } from '../services/orders.service';
 
-@Controller('users')
+@Controller('orders')
 export class OrdersController {
   constructor(private ordersService: OrdersService) {}
 

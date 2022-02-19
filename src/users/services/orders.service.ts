@@ -10,11 +10,19 @@ export class OrdersService {
   constructor(@InjectModel(Order.name) private orderModel: Model<Order>) {}
 
   async findAll() {
-    return await this.orderModel.find().exec();
+    return await this.orderModel
+      .find()
+      .populate('customer')
+      .populate('products')
+      .exec();
   }
 
   async findOne(id: string) {
-    const customer = await this.orderModel.findById(id).exec();
+    const customer = await this.orderModel
+      .findById(id)
+      .populate('customer')
+      .populate('products')
+      .exec();
     if (!customer) {
       throw new NotFoundException(`Customer ${id} not found`);
     }
