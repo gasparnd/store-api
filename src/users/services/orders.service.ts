@@ -51,4 +51,25 @@ export class OrdersService {
     }
     return customer;
   }
+
+  async removeProduct(id: string, productId: string) {
+    const order = await this.orderModel.findById(id).exec();
+    if (!order) {
+      throw new NotFoundException(`order ${id} not found`);
+    }
+    order.products.pull(productId);
+    return order.save();
+  }
+
+  async addProducts(id: string, productsIds: string[]) {
+    const order = await this.orderModel.findByIdAndUpdate(id, {
+      $addToSet: { products: productsIds },
+    });
+
+    if (!order) {
+      throw new NotFoundException(`order ${id} not found`);
+    }
+
+    return await order.save();
+  }
 }
