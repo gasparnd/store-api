@@ -23,8 +23,11 @@ import { ProductsService } from './../services/products.service';
 import { MongoIdPipe } from 'src/common/mongo-id.pipe';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { Public } from 'src/auth/decorators/public.decorator';
+import { Role } from 'src/auth/models/roles.model';
+import { Roles } from 'src/auth/decorators/roles.decorator';
+import { RolesGuard } from 'src/auth/guards/roles.guard';
 
-@UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard, RolesGuard)
 @ApiTags('products')
 @Controller('products')
 export class ProductsController {
@@ -53,6 +56,7 @@ export class ProductsController {
     return this.productsService.findOne(productId);
   }
 
+  @Roles(Role.ADMIN)
   @Post()
   create(@Body() payload: CreateProductDto) {
     // return {
@@ -62,6 +66,7 @@ export class ProductsController {
     return this.productsService.create(payload);
   }
 
+  @Roles(Role.ADMIN)
   @Put(':id')
   update(
     @Param('id', MongoIdPipe) id: string,
@@ -70,6 +75,7 @@ export class ProductsController {
     return this.productsService.update(id, payload);
   }
 
+  @Roles(Role.ADMIN)
   @Delete(':id')
   delete(@Param('id', MongoIdPipe) id: string) {
     return this.productsService.remove(id);
